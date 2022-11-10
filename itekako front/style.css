@@ -166,14 +166,18 @@ button {
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    background: #512DA8;
+    background: var(--color1);
     font-size: 35px;
-    color: #fff;
+    color: #000;
     text-align: center;
     line-height: 70px;
     margin-bottom: 15px ;
     margin-right: 25px;
     position: absolute;
+  }
+
+  .setindex{
+    z-index: 20 !important ;
   }
 
   img{

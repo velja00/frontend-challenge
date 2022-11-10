@@ -41,7 +41,7 @@ window.addEventListener('load', (event) => {
           `<div class="div-office-${id} office-items">
               <ul>
                   <img class="circular_image" src="${photo}" alt="${name}">
-                  <div id="profileImage" class="div${i}">${name.charAt(0)}</div>
+                  <div id="profileImage" class="div${i}${photo==null? ' setindex':''}">${name.charAt(0)}</div>
                   <li><h4> ${name}<h4></li>
                   <li> ${description}</li>
               </ul>
@@ -71,7 +71,7 @@ grid.addEventListener('click',function () {
               <ul>
               
               <img class="circular_image" src="${photo}" alt="${name}">
-              <div id="profileImage" class="div${i}">${name.charAt(0)}</div>
+              <div id="profileImage" class="div${i}${photo==null? ' setindex':''} ">${name.charAt(0)}</div>
                   <li><h4> ${name}<h4></li>
                   <li> ${description}</li>
               </ul>
@@ -99,7 +99,7 @@ list.addEventListener('click',function () { fetchAsync()
               <ul>
                 
                   <img class="circular_image" src="${photo}" alt="${name}">
-                  <div id="profileImage" class="div${i}">${name.charAt(0)}</div>
+                  <div id="profileImage" class="div${i} ${photo==null? ' setindex':''}">${name.charAt(0)}</div>
                   <li><h4> ${name}<h4></li>
                   <li> ${description}</li>
               </ul>
@@ -107,13 +107,8 @@ list.addEventListener('click',function () { fetchAsync()
           </div>`;
           document.getElementById('offices').innerHTML = result;
 
+  }) 
   })
-  var slike = document.getElementsByTagName('img');
-  for (let i = 0; i < slike.length; i++) {
-    if (slike[i].src==null) {
-        document.getElementsByClassName(`div${i}`)[0].style.zIndex = '20';
-      }
-  }})
   if(document.getElementById("offices").className == "gridclass")
    document.getElementById("offices").className = "offices";
 
