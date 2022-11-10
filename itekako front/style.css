@@ -1,0 +1,284 @@
+:root {
+    --color1: #EDEADE;
+    --color2: #00bcd4;
+    --color3: #ffff33;
+    --color4: #76dce8;
+    --color5: #3e3e3e;
+}
+
+html {
+    box-sizing: border-box;
+}
+body{
+    font: 20px Arial;
+    padding: 0;
+    margin: 0;
+    padding: 0;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/*navbar styling*/
+
+header{
+    background-color: var(--color2);
+}
+
+nav{
+    align-items: baseline;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row nowrap;
+}
+.ul-nav {
+    height: 60px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    margin-left: 20px;
+    margin-right: 250px;
+    color: var(--color1);
+}
+
+.ul-nav :first-child{
+    width: 200px;
+    text-align: center;
+    color: var(--color1);
+}
+
+.ul-nav :nth-child(2){
+    width: 200px;
+    text-align: center;
+    color: var(--color1);
+
+}
+
+.ul-nav :nth-child(3){
+    width: 200px;
+    text-align: center;
+    color: var(--color1);
+}
+
+.header button {
+  position: relative;
+  color:var(--color4);
+  text-decoration: none;
+  width: 100%;
+  margin: 2rem 0;
+  width: 100%;
+  padding: 8px 0;
+}
+
+
+
+.header button:focus {
+  color:white;
+}
+
+.header button::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color:var(--color3);
+  transform: scaleX(0);
+}
+
+.header button:focus::before {
+  transform: scaleX(1);
+}
+
+
+button {
+    padding: 0;
+    font-size: 20px;
+    border: none;
+    background-color: var(--color2);
+}
+
+
+
+/*loader*/
+
+
+#loading {
+    width: 2rem;
+    height: 2rem;
+    border: 5px solid #f3f3f3;
+    border-top: 6px solid #000000;
+    border-radius: 100%;
+    margin: auto;
+    visibility: hidden;
+    animation: spin 1s infinite linear;
+}
+#loading.display {
+    visibility: visible;
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+/*offices styling*/
+
+.offices {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color2);
+    margin: 20px;
+    color: #006f76;
+}
+
+.circular_image{
+    float:left;
+    padding: 0;
+    margin-bottom: 15px ;
+    margin-right: 25px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: blue; 
+    position: relative;
+}
+
+#profileImage {
+    float: left;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #512DA8;
+    font-size: 35px;
+    color: #fff;
+    text-align: center;
+    line-height: 70px;
+    margin-bottom: 15px ;
+    margin-right: 25px;
+    position: absolute;
+  }
+
+  img{
+    z-index: 10;
+  }
+ul {
+    list-style-type: none;
+}
+
+li {
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
+h4 {
+    margin: 0;
+    color:white;
+}
+
+/*grid*/
+
+.gridclass {
+    background-color: var(--color2);
+    margin: 20px;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.gridclass div{
+    background-color: white;
+    margin: 15px;
+    width: 300px;
+    height: 300px;
+}
+
+.gridclass hr{
+    display: none;
+}
+
+.gridclass ul{
+    display: flex;
+    flex-direction: column;
+   height: 80%;
+   padding: 0;
+}
+
+.gridclass h4{
+    color: var(--color5);
+    padding-bottom:10px;
+    text-align: center;
+}
+.gridclass .circular_image{
+    margin-left: 115px;
+    position: relative;
+    
+}
+
+.gridclass #profileImage{
+    margin-left: 115px;
+    position: absolute;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+.gridclass li{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#map {
+    height: 500px;
+    margin-left: 20px;
+    margin-right:20px
+    
+}
+
+/*responsive*/
+
+
+@media only screen and (max-width: 1200px) {
+   h1 {
+    display: none;
+   }
+   nav {
+    justify-content: center;
+   }
+ .gridclass{
+    justify-content: center;
+ }
+
+  }
+
+  @media only screen and (max-width: 850px) {
+    .ul-nav :first-child{
+        width: 100px;   
+    }
+    
+    .ul-nav :nth-child(2){
+        width: 100px;
+        
+    }
+    
+    .ul-nav :nth-child(3){
+        width: 100px;
+    }
+  
+   }
