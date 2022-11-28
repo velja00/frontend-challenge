@@ -27,6 +27,22 @@ async function fetchAsync () {
 
 window.addEventListener('load', (event) => {
 
+  var map = L.map('map').setView([37, 35], 2);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(map);
+
+  fetchAsync()
+  .then(function (data) {
+ data.forEach((data) => {
+  const {id, name, description, latitude, longitude, photo} = data;
+ var marker = L.marker([latitude, longitude]).addTo(map);
+ var place = name.split(" ");
+ marker.bindPopup(`<b> ${name} </b><br>Itekako office in ${place[0]}.`)
+})
+})
+
   fetchAsync()
   .then(function (data) {
     let loader = `<div class="boxLoading"></div>`;
@@ -121,18 +137,5 @@ const mapa= document.querySelector(".mapa");
 mapa.addEventListener('click',function () {
  const div= document.getElementById('offices').innerHTML = "";
  document.getElementById("mapcontainer").style.display = "block";
- var map = L.map('map').setView([37, 35], 2);
- L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-     maxZoom: 19,
-     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
- }).addTo(map);
- fetchAsync()
-  .then(function (data) {
- data.forEach((data) => {
-  const {id, name, description, latitude, longitude, photo} = data;
- var marker = L.marker([latitude, longitude]).addTo(map);
- var place = name.split(" ");
- marker.bindPopup(`<b> ${name} </b><br>Itekako office in ${place[0]}.`)
 })
-})})
 
