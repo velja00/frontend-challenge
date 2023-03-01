@@ -4,9 +4,11 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
     integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
     crossorigin=""/>
+    <!-- Load all script files before end of body tag  -->
     <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
     integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
     crossorigin=""></script>
+    <!-- Meta tags should be before all others tags in header  -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,11 +18,13 @@
 <body>
     <div>
     <header class="header">
+        <!-- All elements  needs to be better formatted in order to increase code readability for example:  <nav><h1>Offices</h1> h1 tag should be indented -->
         <nav><h1>Offices</h1>
             <ul class="ul-nav">
                 <li><button id="list" class="list">List</button></li>
                 <li><button id="grid" class="grid">Grid</button></li>
                 <li><button id="mapa" class="mapa">Map</button></li>
+                <!-- be consistent! all variables needs to be named in english. -->
             </ul>
         </nav>
     </header>
