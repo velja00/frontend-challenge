@@ -9,12 +9,14 @@
 html {
     box-sizing: border-box;
 }
-body{
+
+body {
     font: 20px Arial;
     padding: 0;
     margin: 0;
     padding: 0;
 }
+
 *,
 *::before,
 *::after {
@@ -22,49 +24,47 @@ body{
 }
 
 /*navbar styling*/
-
-header{
+header {
     background-color: var(--color2);
 }
 
-nav{
-    align-items: baseline;
+nav {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-flow: row nowrap;
+    align-items: center;
 }
 .ul-nav {
     height: 60px;
-    margin: 0;
+    margin: 0 0 0 -101px;
     padding: 0;
     list-style-type: none;
     display: flex;
+    justify-content: center;
+    width: 100%;
     align-items: center;
 }
 
 h1 {
-    margin: 0;
+    margin:0 0 0 20px;
     padding: 0;
-    margin-left: 20px;
-    margin-right: 250px;
     color: var(--color1);
 }
 
-.ul-nav :first-child{
+.ul-nav :first-child {
+    width: 200px;
+    text-align: center;
+    color: var(--color1);
+    margin: 0 0;
+}
+
+.ul-nav :nth-child(2) {
     width: 200px;
     text-align: center;
     color: var(--color1);
 }
 
-.ul-nav :nth-child(2){
-    width: 200px;
-    text-align: center;
-    color: var(--color1);
-
-}
-
-.ul-nav :nth-child(3){
+.ul-nav :nth-child(3) {
     width: 200px;
     text-align: center;
     color: var(--color1);
@@ -79,8 +79,6 @@ h1 {
   width: 100%;
   padding: 8px 0;
 }
-
-
 
 .header button:focus {
   color:white;
@@ -102,7 +100,6 @@ h1 {
   transform: scaleX(1);
 }
 
-
 button {
     padding: 0;
     font-size: 20px;
@@ -110,24 +107,28 @@ button {
     background-color: var(--color2);
 }
 
-
-
 /*loader*/
-
-
 #loading {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
     width: 2rem;
     height: 2rem;
     border: 5px solid #f3f3f3;
     border-top: 6px solid #000000;
     border-radius: 100%;
     margin: auto;
-    visibility: hidden;
+    display: none;
     animation: spin 1s infinite linear;
 }
+
 #loading.display {
-    visibility: visible;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
+
 @keyframes spin {
     from {
         transform: rotate(0deg);
@@ -135,11 +136,9 @@ button {
     to {
         transform: rotate(360deg);
     }
-
 }
 
 /*offices styling*/
-
 .offices {
     display: flex;
     flex-direction: column;
@@ -148,7 +147,7 @@ button {
     color: #006f76;
 }
 
-.circular_image{
+.circular_image {
     float:left;
     padding: 0;
     margin-bottom: 15px ;
@@ -158,7 +157,6 @@ button {
     border-radius: 50%;
     overflow: hidden;
     background-color: blue; 
-    position: relative;
 }
 
 #profileImage {
@@ -173,95 +171,86 @@ button {
     line-height: 70px;
     margin-bottom: 15px ;
     margin-right: 25px;
-    position: absolute;
-  }
+}
 
-  .setindex{
-    z-index: 20 !important ;
-  }
-
-  img{
-    z-index: 10;
-  }
 ul {
     list-style-type: none;
 }
 
 li {
-white-space: nowrap;
-overflow: hidden;
-text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
 }
 
 h4 {
     margin: 0;
+    padding-bottom: 2px;
     color:white;
 }
 
 /*grid*/
-
 .gridclass {
     background-color: var(--color2);
     margin: 20px;
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
 }
 
-.gridclass div{
+.gridclass div {
     background-color: white;
     margin: 15px;
     width: 300px;
     height: 300px;
 }
 
-.gridclass hr{
+.gridclass hr {
     display: none;
 }
 
-.gridclass ul{
+.gridclass ul {
     display: flex;
     flex-direction: column;
    height: 80%;
    padding: 0;
 }
 
-.gridclass h4{
+.gridclass h4 {
     color: var(--color5);
     padding-bottom:10px;
     text-align: center;
 }
-.gridclass .circular_image{
+
+.gridclass .circular_image {
     margin-left: 115px;
-    position: relative;
-    
 }
 
-.gridclass #profileImage{
+.gridclass #profileImage {
     margin-left: 115px;
-    position: absolute;
     margin-bottom: 15px;
     margin-top: 0;
 }
-.gridclass li{
-    white-space: nowrap;
+.gridclass li {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
     overflow: hidden;
-    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    padding: 0 20px 0 20px;
 }
 
 #map {
-    height: 500px;
-    margin-left: 20px;
-    margin-right:20px 
-    
+    height: 87vh;
+    margin: 20px 20px;
 }
 
-#mapcontainer{
+#mapcontainer {
+    height: 100%;
     visibility: hidden;
 }
 
 /*responsive*/
-
-
 @media only screen and (max-width: 1200px) {
    h1 {
     display: none;
@@ -271,11 +260,10 @@ h4 {
    }
  .gridclass{
     justify-content: center;
- }
+   }
+}
 
-  }
-
-  @media only screen and (max-width: 850px) {
+@media only screen and (max-width: 850px) {
     .ul-nav :first-child{
         width: 100px;   
     }
@@ -288,5 +276,4 @@ h4 {
     .ul-nav :nth-child(3){
         width: 100px;
     }
-  
-   }
+}
